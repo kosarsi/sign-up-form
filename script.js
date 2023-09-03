@@ -9,6 +9,7 @@ passwordInput.addEventListener("input", function() {
     } else {
         passwordInput.style.border = "1px solid red";
     }
+    passwordLabel.textContent = "";
 });
 
 confirmPassword.addEventListener("input", function() {
@@ -17,6 +18,7 @@ confirmPassword.addEventListener("input", function() {
     } else {
         confirmPassword.style.border = "1px solid red";
     }
+    passwordLabel.textContent = "";
 })
 
 function checkPasswords() {
@@ -26,10 +28,11 @@ function checkPasswords() {
         passwordLabel.textContent = "*Passwords do not match";
         passwordInput.value = "";
         confirmPassword.value = "";
+        passwordInput.style.border = "1px solid red";
+        confirmPassword.style.border = "1px solid red";
         return false; 
     } else {
         passwordLabel.textContent = "";
         return true;
     }
-}
-
+} 
